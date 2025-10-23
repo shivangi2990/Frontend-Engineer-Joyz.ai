@@ -1,10 +1,10 @@
 <li>
-  - {{ nodeKey }}
-  <ul *ngIf="children.length > 0">
-    <app-tree-node 
-      *ngFor="let child of children"
-      [nodeKey]="child"
-      [tree]="tree">
-    </app-tree-node>
-  </ul>
+    - {{nodeKey}}
+    <ul *ngIf = "children.length > 0">
+        <app-tree-node
+            *ngFor="let child of children"
+            [nodeKey]="child"
+            [tree]="tree">
+        </app-tree-node>
+    </ul>
 </li>
