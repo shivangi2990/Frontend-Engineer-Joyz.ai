@@ -1,18 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-CommonModule
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-tree-node',
-  templateUrl: './tree-node.component.html',
-  styleUrls: ['./tree-node.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule  ],
+  templateUrl: './tree-node.component.html',
+  styleUrl: './tree-node.component.scss'
 })
 export class TreeNodeComponent {
-  @Input() nodeKey!: string;
-  @Input() tree!: Record<string, string[]>;
+@Input() nodeKey!: string;
+@Input() tree!: Record<string, string[]>;
+get children(): string[]{
+  return this.tree[this.nodeKey] ?? []
+}
 
-  get children(): string[] {
-    return this.tree[this.nodeKey] || [];
-  }
 }
